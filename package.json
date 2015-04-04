@@ -1,0 +1,29 @@
+{
+  "name": "socket.io-express-session",
+  "version": "0.1.0",
+  "description": "Use express-session as socket.io middleware.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:xpepermint/socket.io-express-session.git"
+  },
+  "keywords": [
+    "express",
+    "socket",
+    "session",
+    "socket.io",
+    "middleware",
+    "connect"
+  ],
+  "author": "Xpepermint",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xpepermint/socket.io-express-session/issues"
+  },
+  "homepage": "https://github.com/xpepermint/socket.io-express-session",
+  "dependencies": {
+  }
+}
