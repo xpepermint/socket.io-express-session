@@ -48,3 +48,5 @@ io.on('connection', function(socket){
   console.log(socket.handshake.session);
 });
 ```
+
+**NOTE**: You should change the default MemoryStore session store. It is not designed for a production environment. If you do use the default store then you should pass the same session instance to express and io app (data are saved in memory).
