@@ -41,7 +41,7 @@ var server = http.createServer(app);
 server.listen(process.env.PORT || '3000');
 
 // creating new socket.io app
-var ios = require('../../../socket.io-express-session');
+var ios = require('socket.io-express-session');
 var io = require('socket.io')(server);
 io.use(ios(session)); // session support
 io.on('connection', function(socket){

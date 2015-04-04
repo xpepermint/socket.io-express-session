@@ -1,6 +1,6 @@
 {
   "name": "socket.io-express-session",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use express-session as socket.io middleware.",
   "main": "index.js",
   "scripts": {
