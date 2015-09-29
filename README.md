@@ -4,7 +4,7 @@
 
 ## Setup
 
-All you have to is adding a middleware like you would in your express app.
+All you have to do is adding a middleware like you would in your express app.
 
 ```js
 var ios = require('socket.io-express-session');
@@ -18,35 +18,9 @@ io.on('connection', function(socket){
 });
 ```
 
-## Example
+**EXAMPLE:**
+An example app is available under the the `example` folder. Run the `npm run example` command to start it.
 
-```js
-// initializing express-session middleware
-var Session = require('express-session'),
-    SessionStore = require('session-file-store')(Session);
-var session = Session({ secret: 'pass', resave: true, saveUninitialized: true });
+**IMPORTANT:** You must pass the same session configuration into express and socket app (the same store, same secret)!
 
-// creating new express app
-var express = require('express');
-var app = express();
-app.use(session); // session support
-app.get('/', function (req, res) {
-  req.session.uid = 1;
-  res.send('Hi user #' + req.session.uid);
-});
-
-// attaching express app to HTTP server
-var http = require('http');
-var server = http.createServer(app);
-server.listen(process.env.PORT || '3000');
-
-// creating new socket.io app
-var ios = require('socket.io-express-session');
-var io = require('socket.io')(server);
-io.use(ios(session)); // session support
-io.on('connection', function(socket){
-  console.log(socket.handshake.session);
-});
-```
-
-**NOTE**: You should change the default MemoryStore session store. It is not designed for a production environment. If you do use the default store then you should pass the same session instance to express and io app (data are saved in memory).
+**IMPORTANT:** Do not use the default `MemoryStore` session store. It is not designed for a production environment. If you do use the default store then you should pass the same session **instance** to express and socket app (data are saved in memory).

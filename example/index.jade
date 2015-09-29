@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  head
+    title Express Session
+    script(src="/socket.io/socket.io.js")
+    script.
+      var socket = io('http://localhost:3000');
+      socket.on('message', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my: 'data' });
+      });
+  body
+    div #{message}
+    div 
+      a(href="/") Home
+      span |
+      a(href="/about") About
+      span |
+      a(href="/login") Login
